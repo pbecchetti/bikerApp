@@ -1,0 +1,56 @@
+.bike-card {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+.mat-card-header {
+    justify-content: center;
+    text-transform: uppercase;
+    background: #4d110f;
+    color: white;
+    padding-top: 10px;
+}
+
+.mat-card-image,
+.mat-card-content {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+.mat-card-actions {
+    width: 80%;
+    margin: auto;
+    max-width: 230px;
+    padding-top: 30px;
+}
+
+.btnOK {
+    border-color: green;
+    border-width: 2px;
+    padding-top: 10px;
+}
+
+.btnKO {
+    border-color: red;
+    border-width: 2px;
+    padding-top: 10px;
+}
+
+.emptyCard {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.textInfo {
+    padding: 30px;
+}
+
+.emptyCard .mat-button,
+.listedBike .mat-button {
+    background-color: #CACFD2;
+    margin: 15px;
+}
+
+@media (min-width: 600px) {}

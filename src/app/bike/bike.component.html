@@ -1,0 +1,57 @@
+<div *ngIf="bikestoDisplay">
+    <div *ngIf="!bike">
+        <mat-card class="bike-card">
+            <div class="textInfo">Sorry, we don't have any bikes to show at the moment, come back later! </div>
+        </mat-card>
+    </div>
+    <div *ngIf="bike">
+        <mat-card class="bike-card">
+            <mat-card-header>
+                <div mat-card-avatar class="bike-header-image"></div>
+                <mat-card-title>{{bike.name}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src={{bike.pictureurl}} alt="BikePicture">
+            <mat-card-content>
+                <p>
+                    {{bike.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="ride(bike)" mat-stroked-button class="btnOK">
+                  <img src="./assets/img/bikeOK.png" alt="Ride"><br>RIDE</button>
+                <button (click)="noRide()" mat-stroked-button class="btnKO">
+               <img src="./assets/img/bikeKO.png" alt="NoRide"> <br>DON'T RIDE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="emptyCard" *ngIf="!bikestoDisplay && !displayList">
+    <mat-card class="bike-card">
+        <div class="textInfo">No more bikes! </div>
+        <button (click)="listBikes()" mat-button>Show me the ones I liked</button>
+    </mat-card>
+</div>
+
+<div class="listedBike" *ngIf="displayList">
+    <div *ngIf="list.length !=0">
+        <mat-card class="bike-card">
+            <div>Nice list! Want to know more about them? Click below. </div>
+            <ul>
+                <li *ngFor="let LikedBike of list">
+                    {{LikedBike}}
+                </li>
+            </ul>
+            <button (click)="retry()" mat-button>Retry</button>
+        </mat-card>
+
+    </div>
+    <div *ngIf="list.length===0">
+        <mat-card class="bike-card">
+            <div class="emptyCard">Oh no, you didn't like any of our bikes :(. <br> Come back later!</div>
+            <button (click)="reset()" mat-button>Or retry</button>
+        </mat-card>
+
+    </div>
+
+</div>
