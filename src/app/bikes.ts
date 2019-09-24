@@ -57,6 +57,6 @@ export const bikes = [
       id:'10',
       name: 'Bixi',
       description: 'Sharing utility bicycles with a unisex step-through frame and three gears, Heavy.',
-      pictureurl: './assets/img/bixi.png'
+      pictureurl: './assets/img/bixi.jpg'
     },
   ];
